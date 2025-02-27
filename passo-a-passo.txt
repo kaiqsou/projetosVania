@@ -58,3 +58,7 @@ ir até o <User.js> e importar o moongose diretamente do DB
 
 importar a rota no <index.js>
 
+configurar login e register no UserController.js
+
+importar argon2 no UserController.js para usar da criptografia
+
