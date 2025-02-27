@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./index.js localhost 5000"
+    "start": "nodemon ./index.js http://localhost:5000"
   },
   "keywords": [],
   "author": "",
@@ -15,7 +15,7 @@
     "argon2": "^0.41.1",
     "cors": "^2.8.5",
     "express": "^4.21.2",
-    "mongoose": "^8.10.2"
+    "mongoose": "^8.11.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.9"

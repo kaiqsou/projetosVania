@@ -1,3 +1,7 @@
+iniciar projeto sem a node_modules:
+npm install <pacotes>
+npm start
+
 passo-a-passo do projeto
 
 npm init -y

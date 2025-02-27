@@ -9,6 +9,6 @@ export default class UserController{        // feita para poder fazer import del
 
     static async login(req, res) 
     {
-        
+        res.json({message:"Olá"});
     }
 }
