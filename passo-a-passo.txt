@@ -1,59 +1,62 @@
 iniciar projeto sem a node_modules:
-npm install <pacotes>
-npm start
+	npm install <pacotes>
+	npm start
 
-passo-a-passo do projeto
+PASSO-A-PASSO DO PROJETO
 
-npm init -y
-npm install <pacote>
-- express
-- cors
-- mongoose
-- argon2
+	npm init -y
+	npm install <pacote>
+	- express
+	- cors
+	- mongoose
+	- argon2
 
 adicionar "type": "module", abaixo do "main" no package.json
-$ npm install nodemon --save-dev
+	$ npm install nodemon --save-dev
 
 adicionar "start": "nodemon ./index.js localhost 5000" no package.json
 
-criar arquivos:
+CRIAR ARQUIVOS
 
 DENTRO DA BACKEND
-- pasta <db>
-- pasta <controllers>
-- pasta <models>
-- pasta <routes>
-- arquivo <index.js>
+	- pasta <db>
+	- pasta <controllers>
+	- pasta <models>
+	- pasta <routes>
+	- arquivo <index.js>
 
 DENTRO DA DB 
-- arquivo <conn.js>
+	- arquivo <conn.js>
 
 DENTRO DA ROUTES
 
-- pasta <users>
+	- pasta <users>
 
 DENTRO DA MODELS
-- arquivo <user.js>
+	- arquivo <user.js>
 
 fazer os imports no index.js
-import express from "express";
-import cors from "cors";
+	import express from "express";
+	import cors from "cors";
 
 criar arquivo de rota <route.js> dentro da pasta backend
-- importar o módulo de rota do express
-- exportar a rota
+	- importar o módulo de rota do express
+	- exportar a rota
 
 criar arquivo <UserController.js> dentro da pasta de controllers
-- fazer a classe default do UserController no UserController.js
-- importar o UserController no arquivo <route.js>
+	- fazer a classe default do UserController no UserController.js
+	- importar o UserController no arquivo <route.js>
 
 importar o mongoose no arquivo <User.js>
+
 criar o esquema no <User.js>, junto ao export da model User
+
 importar o model User no <UserController.js>
 
 importar o moongose no conn.js e fazer a conexão
 
 exportar o moongose no <conn.js>
+
 ir até o <User.js> e importar o moongose diretamente do DB
 
 importar a rota no <index.js>
@@ -61,4 +64,29 @@ importar a rota no <index.js>
 configurar login e register no UserController.js
 
 importar argon2 no UserController.js para usar da criptografia
+
+// ------------------------------------------------------------------- //
+
+executar o comando dentro da pasta do projeto e fora do backend
+npx create-react-app frontend (deve ser minúsculo)
+	npx é uma ferramenta do node que executa pacotes do npm sem a necessidade de instalar globalmente
+
+iniciar o projeto
+	npm start
+
+instalar os pacotes:
+	axios - conexão com a api
+	events - mensageira
+	react-icons - icones
+	react-router-dom - mapeamento de páginas
+
+criar as pastas em src:
+	Components (compartilhamento de arquivos entre páginas, como header e footer)
+	Utils
+	Context
+	hooks
+	pages
+
+criar o arquivo em src:
+	routes.jsx
 
