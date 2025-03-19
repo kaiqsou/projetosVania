@@ -5,7 +5,7 @@ iniciar projeto sem a node_modules:
 PASSO-A-PASSO DO PROJETO
 
 	npm init -y
-	npm install <pacote>
+	npm install <pacote>   (BACKEND)
 	- express
 	- cors
 	- mongoose
@@ -74,7 +74,7 @@ npx create-react-app frontend (deve ser minúsculo)
 iniciar o projeto
 	npm start
 
-instalar os pacotes:
+instalar os pacotes:	(FRONTEND)
 	axios - conexão com a api
 	events - mensageira
 	react-icons - icones
@@ -90,3 +90,17 @@ criar as pastas em src:
 criar o arquivo em src:
 	routes.jsx
 
+criar na pasta Components:
+	Container
+	Footer
+	Header
+	Form
+
+criar index.jsx e colocar o arquivo css para cada uma das pastas acima
+
+o nome "x.module.css" faz com que não haja interferencia do css em algum outro componente, se tornando específico para onde está
+
+index.css é um css Global, que se aplica a todos os componentes.
+
+criar pasta auth na pasta pages
+criar pasta register, home e login na pasta auth
