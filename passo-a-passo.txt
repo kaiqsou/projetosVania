@@ -102,5 +102,14 @@ o nome "x.module.css" faz com que não haja interferencia do css em algum outro 
 
 index.css é um css Global, que se aplica a todos os componentes.
 
-criar pasta auth na pasta pages
-criar pasta register, home e login na pasta auth
+criar na pasta pages:
+	pasta auth
+
+criar na pasta auth:
+	pasta register, home e login
+
+criar na pasta Form:
+	input.jsx
+
+criar na pasta hooks:
+	useAuth.jsx

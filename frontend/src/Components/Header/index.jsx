@@ -6,7 +6,7 @@ function Header()
     return(
         <nav className={styles.navbar}>
             <div className={styles.navbar_logo}>
-                <h2>meu pet sumiu</h2>;
+                <h2>meu pet sumiu</h2>
             </div>
         
         <ul>

@@ -9,7 +9,7 @@ function Footer()
                     meu pet sumiu
                 </span>
             </p>
-            $copy;2025
+            2025
         </footer>
     )
 }

@@ -1,12 +1,13 @@
 import User from "../models/User.js";
 import Argon2 from "argon2";
 import createUserToken from "../helpers/create-token.js";
-export default class UserController{
-    static async register(req,res)
+
+export default class UserController{    // feita para poder fazer import dela
+    static async register(req,res)      // req = requisiçao | res = resposta
     {
-        //res.json({message:"Olá"});
+        // res.json({message:"Olá"}); - responde a mensagem - testado no Postman
         const{name, email, phone, password, confirmpassword} = req.body;
-        //validar
+        // validar
         if(!name)
         {
             res.status(422).json({message:"O nome é obrigatório"});
@@ -37,20 +38,24 @@ export default class UserController{
             res.status(422).json({message:"Senhas não são iguais"});
             return;
         }
-        try {
-            //verificar se já tem um usuário com o mesmo email
+        try 
+        {
+            
+            // verificar se já tem um usuário com o mesmo email
             const userExist = await User.findOne({email:email});
             if(userExist)
             {
                 return res.status(422).json({message:"E-mail já cadastrado"});
             }
-            //criptografar a senha antes de salvar
+
+            // criptografar a senha antes de salvar
             const passwordhash = await Argon2.hash(password,{
                 type:Argon2.argon2id,
-                memoryCost:2**16,
+                memoryCost:2**16,           // defesa para dificultar ataque
                 parallelism:1
             });
-            //salvar o usuário
+
+            // salvar o usuário
             const user = new User({
                 name,
                 email,
@@ -59,8 +64,8 @@ export default class UserController{
             });
             try {
                 const newUser = await user.save();
-                //token se for logar após o registro do usuário descomentar a linha de baixo
-                //await createUserToken(userExist, req, res);
+                // token se for logar após o registro do usuário descomentar a linha de baixo
+                // await createUserToken(userExist, req, res);
 
                 return res.status(201).json({message:"Usuário inserido com sucesso",newUser})
             } catch (error) {
