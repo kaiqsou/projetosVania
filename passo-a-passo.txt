@@ -81,9 +81,9 @@ instalar os pacotes:	(FRONTEND)
 	react-router-dom - mapeamento de páginas
 
 criar as pastas em src:
-	Components (compartilhamento de arquivos entre páginas, como header e footer)
-	Utils
-	Context
+	components (compartilhamento de arquivos entre páginas, como header e footer)
+	utils
+	context
 	hooks
 	pages
 
@@ -113,3 +113,9 @@ criar na pasta Form:
 
 criar na pasta hooks:
 	useAuth.jsx
+
+criar na pasta utils:
+	api.jsx
+
+criar na pasta context:
+	UserContext.jsx

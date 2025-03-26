@@ -1,16 +1,18 @@
 import styles from "../../../Components/Form/Form.module.css";
-import {useState, userContext} from "react";
+import { useState, useContext } from "react";
 import Input from "../../../Components/Form/input.jsx";
-// import {Context} from "../../../Context/userContext.jsx"
+import register from "../../../hooks/useAuth.jsx";
+// import { Context } from "../../../context/UserContext.jsx";
 
 
 function Register()
 {
-    const [user, setUser] = userState({});         // estado inicial do objeto user é vazio, userState({}), já que a pessoa ainda não digitou algo
+    const [user, setUser] = useState({});         // estado inicial do objeto user é vazio, userState({}), já que a pessoa ainda não digitou algo
     
     function handleSubmit(e){                      // parametro "e" é o evento que acontece quando aperta o botão submit, guardando as informaçoes do input
         e.preventDefault();
         console.log(user);
+        register(user);
     }
 
     function handleChange(e){
@@ -55,6 +57,7 @@ function Register()
 
             <Input    
             type = "submit"
+            name = "submit"
             value = "Cadastrar"
             handleOnChange = {handleChange}         
             />

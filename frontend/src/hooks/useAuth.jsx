@@ -1,6 +1,6 @@
 import api from "../utils/api.jsx";
 
-export default userAuth()
+export default function userAuth()
 {
 
     async function register(user)
@@ -16,6 +16,7 @@ export default userAuth()
         catch(error){
             console.log(error);
         }
+        
     }   // fechamento da função
     return {register};
 }   // fechamento da export
