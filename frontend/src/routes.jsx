@@ -6,12 +6,14 @@ import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import Container from "./Components/Container";
 import { UserProvider } from "./context/UserContext.jsx";
+import Message from "./Components/Message/index.jsx";
 
 function AppRoutes() {       // função para gerenciamento de rotas
     return (
         <BrowserRouter>
             <UserProvider>
                 <Header />
+                <Message />
                 <Container>
                     <Routes>
 

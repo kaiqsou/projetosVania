@@ -113,9 +113,20 @@ criar na pasta Form:
 
 criar na pasta hooks:
 	useAuth.jsx
+	useFlashMessage.jsx
 
 criar na pasta utils:
 	api.jsx
+	bus.jsx
 
 criar na pasta context:
 	UserContext.jsx
+
+criar na pasta Components:
+	pasta message
+
+criar na pasta Components/message:
+	index.jsx
+	Message.module.css
+	
+

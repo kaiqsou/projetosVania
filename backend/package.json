@@ -12,7 +12,10 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "2": "^3.0.0",
+    "argon": "^2.0.21",
     "argon2": "^0.41.1",
+    "axios": "^1.8.4",
     "cors": "^2.8.5",
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",

@@ -1,0 +1,23 @@
+.message
+{
+    max-width: 60%;
+    padding: 1em;
+    border: 1px solid black;
+    margin: 1.2em auto 0;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.success
+{
+    color: lawngreen;
+    background-color: chartreuse;
+    border-color: #C3E6CB;
+}
+
+.error
+{
+    color: crimson;
+    background-color: darksalmon;
+    border-color: tomato;
+}
