@@ -129,8 +129,10 @@ criar na pasta Components/message:
 	index.jsx
 	Message.module.css
 
-no contexto:
-	
-PET
-nome, idade, raca, corPredominante, corOlhos, Especie, genero, porte, local, pontoReferencia, data, recompensa,
-user, situacao, imagem, comentario
+criar na pasta models:
+	Pet.js
+
+criar na pasta helpers:
+	get-user-by-token.js
+	verify-token.js
+	get-token.js
