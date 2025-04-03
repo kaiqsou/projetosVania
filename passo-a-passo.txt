@@ -128,5 +128,9 @@ criar na pasta Components:
 criar na pasta Components/message:
 	index.jsx
 	Message.module.css
-	
 
+no contexto:
+	
+PET
+nome, idade, raca, corPredominante, corOlhos, Especie, genero, porte, local, pontoReferencia, data, recompensa,
+user, situacao, imagem, comentario
