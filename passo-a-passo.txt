@@ -10,6 +10,7 @@ PASSO-A-PASSO DO PROJETO
 	- cors
 	- mongoose
 	- argon2
+	- multer
 
 adicionar "type": "module", abaixo do "main" no package.json
 	$ npm install nodemon --save-dev
@@ -24,6 +25,10 @@ DENTRO DA BACKEND
 	- pasta <models>
 	- pasta <routes>
 	- arquivo <index.js>
+	- pasta public
+		- pasta images
+			- pasta pets
+
 
 DENTRO DA DB 
 	- arquivo <conn.js>
@@ -65,6 +70,8 @@ configurar login e register no UserController.js
 
 importar argon2 no UserController.js para usar da criptografia
 
+criar o arquivo <image-upload.js> na pasta Helpers
+
 // ------------------------------------------------------------------- //
 
 executar o comando dentro da pasta do projeto e fora do backend
@@ -75,10 +82,10 @@ iniciar o projeto
 	npm start
 
 instalar os pacotes:	(FRONTEND)
-	axios - conexão com a api
-	events - mensageira
-	react-icons - icones
-	react-router-dom - mapeamento de páginas
+	- axios - conexão com a api
+	- events - mensageira
+	- react-icons - icones
+	- react-router-dom - mapeamento de páginas
 
 criar as pastas em src:
 	components (compartilhamento de arquivos entre páginas, como header e footer)
@@ -136,3 +143,17 @@ criar na pasta helpers:
 	get-user-by-token.js
 	verify-token.js
 	get-token.js
+
+====================================================================================
+09/04
+
+# Adicionar no Helpers:
+- Arquivo <image-upload.js>
+
+# Adicionar no Routers:
+- Pasta PET com o arquivo <routesPet.js>
+
+# Adicionar no <index.js> do Backend:
+- app.use(express.static('public'));
+- app.use("/users", routesPet)
+- importar o routesPet

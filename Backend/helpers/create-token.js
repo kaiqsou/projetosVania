@@ -6,8 +6,8 @@ const createUserToken = async(user, req, res)=>{
     {
         const token = await signAsync(
             {
-            name:user.name,
-            id:user._id
+            name: user.name,
+            id: user._id
             },
             process.env.JWT_SECRET || "meusegredo",
             //{expiresIn:"1h"}

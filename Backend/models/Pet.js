@@ -48,7 +48,7 @@ const userSchema = new Schema({          // esquema para definir o usuário
     },
     recompensa:
     {
-        type: Number
+        type: String
     }, 
     situacao:
     {
@@ -57,7 +57,7 @@ const userSchema = new Schema({          // esquema para definir o usuário
     }, 
     imagem:
     {
-        type: String,
+        type: Array,
         required: true
     }, 
     comentario:

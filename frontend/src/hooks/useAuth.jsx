@@ -2,7 +2,7 @@ import api from "../utils/api.jsx";
 // import useFlashMessage from "./hooks/useFlashMessage.jsx";
 import useFlashMessage from "../hooks/useFlashMessage.jsx";
 
-export default function userAuth()
+export default function useAuth()
 {
     const {setFlashMessage} = useFlashMessage();
     async function register(user)

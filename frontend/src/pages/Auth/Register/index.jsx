@@ -8,6 +8,7 @@ import register from "../../../hooks/useAuth.jsx";
 function Register()
 {
     const [user, setUser] = useState({});         // estado inicial do objeto user é vazio, userState({}), já que a pessoa ainda não digitou algo
+    const {register} = useContext(Context);
     
     function handleSubmit(e){                      // parametro "e" é o evento que acontece quando aperta o botão submit, guardando as informaçoes do input
         e.preventDefault();
