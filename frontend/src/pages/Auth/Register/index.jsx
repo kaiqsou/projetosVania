@@ -2,7 +2,7 @@ import styles from "../../../Components/Form/Form.module.css";
 import { useState, useContext } from "react";
 import Input from "../../../Components/Form/input.jsx";
 import register from "../../../hooks/useAuth.jsx";
-// import { Context } from "../../../context/UserContext.jsx";
+import { Context } from "../../../context/UserContext.jsx";
 
 
 function Register()

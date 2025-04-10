@@ -4,8 +4,9 @@ import bus from "../../utils/bus.jsx";
 
 function Message()
 {
-    const [message, setMessage] = useState("");      // estado inicial da mensagem
-    const [type, setType] = useState("");            // estado inicial do tipo
+    const [message, setMessage] = useState("");          // estado inicial da mensagem
+    const [type, setType] = useState("");                // estado inicial do tipo
+    const [visibility, setVisibility] = useState(false);
     useEffect(()=>{         // mostra a mensagem uma vez
         bus.addListener("flash",({message, type})=>{    // listener captura a mensagem
 

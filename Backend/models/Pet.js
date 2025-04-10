@@ -3,11 +3,11 @@ import mongoose from "../db/conn.js";
 const {Schema}= mongoose;           
 const userSchema = new Schema({          // esquema para definir o usuário
     nome:{
-        type:String
+        type: String
     },
     idade:
     {
-        type:String
+        type: String
     },
     raca:
     {
