@@ -7,6 +7,7 @@ function Input({
   placeholder,
   handleOnChange,
   value,
+  multiple    // para pegar mais de um na imagem
   
 }) {
   return (
@@ -19,6 +20,7 @@ function Input({
         placeholder={placeholder}
         onChange={handleOnChange}
         value={value}
+        multiple={multiple}
       
       />
     </div>

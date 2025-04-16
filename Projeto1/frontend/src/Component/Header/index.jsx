@@ -15,6 +15,9 @@ function Header(){
             </li>
             {authenticated ?(
                 <>
+                    <li>
+                        <Link to="/create">Achados e Perdidos</Link>
+                    </li>
                     <li onClick={logout}>Sair</li>
                 </>
             ):(

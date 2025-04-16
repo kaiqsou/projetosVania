@@ -157,3 +157,13 @@ criar na pasta helpers:
 - app.use(express.static('public'));
 - app.use("/users", routesPet)
 - importar o routesPet
+
+# Adicionar na pasta <Component/Form> 
+- Select.jsx 
+- PetForm.jsx
+
+# Adicionar na pasta <pages>
+- Pasta PET
+
+#Adicionar na pasta <Pet>
+- AddPet.jsx
