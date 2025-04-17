@@ -1,4 +1,6 @@
-function Select({text, name, options, handleOnChange}) // é a função do SELECT do achados e perdidos
+import styles from "../../Component/Form/Form.module.css"
+
+function Select({text, name, options, handleOnChange, value}) // é a função do SELECT do achados e perdidos
 {
     return(
         <div>

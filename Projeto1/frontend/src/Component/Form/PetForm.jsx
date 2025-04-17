@@ -37,7 +37,7 @@ function PetForm({handleSubmit, petData, btnText})
         setPet({...pet, genero:e.target.options[e.target.selectedIndex].text})      
     }
 
-    function submit()
+    function submit(e)
     {
         e.preventDefault();  // não recarrega a página
         console.log(pet);   // ver o pet
@@ -47,18 +47,21 @@ function PetForm({handleSubmit, petData, btnText})
         <form onSubmit={submit}>
             <div>       
             {
+                preview &&
                 preview.length > 0
                 ?preview.map((image, index)=>(
                     <img src={URL.createObjectURL(image)} alt={pet.nome} key={`${pet.nome}+${index}`} />
                 ))
-                :pet.imagens &&
+                :pet && pet.imagens &&
                 pet.imagens.map((image, index)=>(   // process.env.REACT_APP_API ajuda a buscar a imagem
                     <img src={`${process.env.REACT_APP_API}/images/pets/${image}`} alt={image} key={`${pet.nome}+${index}`} />    
                 ))
             }
             </div>
-
-            <Input 
+            {
+                pet&&
+                <div>
+                <Input 
                 text = "Imagens do Pet"
                 type = "file"
                 name = "imagens"
@@ -71,7 +74,7 @@ function PetForm({handleSubmit, petData, btnText})
                 type = "text"
                 name = "nome"
                 handleOnChange = {handleChange}     // os tipos textos utilizam handleChange
-                value = {pet.nome || ""}
+                value = { pet.nome || ""}
             />
 
             <Input 
@@ -177,6 +180,10 @@ function PetForm({handleSubmit, petData, btnText})
                 handleOnChange = {handleChange}     
                 value = {pet.comentario || ""}
             />
+            </div>
+            
+            }
+            
 
             <input type="submit" value={btnText}/>
         </form>
