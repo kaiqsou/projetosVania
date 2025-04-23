@@ -7,7 +7,7 @@ function Input({
   placeholder,
   handleOnChange,
   value,
-  multiple    // para pegar mais de um na imagem
+  multiple,
   
 }) {
   return (

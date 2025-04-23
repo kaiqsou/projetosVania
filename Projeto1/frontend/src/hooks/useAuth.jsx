@@ -11,7 +11,7 @@ export default function useAuth(){
         const token = localStorage.getItem("token");
         if(token)
         {
-            api.defaults.headers.authorization  = `Bearer ${JSON.parse(token)}`;
+            api.defaults.headers.Authorization  = `Bearer ${JSON.parse(token)}`;
             setAuthenticated(true);
         }
     },[])
@@ -63,7 +63,7 @@ export default function useAuth(){
         let msgType = "success";
         setAuthenticated(false);
         localStorage.removeItem("token");
-        api.defaults.headers.authorization = undefined;
+        api.defaults.headers.Authorization = undefined;
         navigate("/");
         setFlashMessage(msgText, msgType);
     }

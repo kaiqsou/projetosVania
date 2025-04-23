@@ -1,193 +1,159 @@
 import Input from "./Input.jsx";
 import Select from "./Select.jsx";
 import {useState} from "react";
-
-function PetForm({handleSubmit, petData, btnText})
-{
-    const {pet, setPet} = useState(petData || {});
-    const {preview, setPreview} = useState([])
+function PetForm ({handleSubmit, petData, btnText}){
+    const [pet, setPet] = useState(petData || {});
+    const [preview, setPreview] = useState([]);
     const situacao = ["Perdido", "Procurando Tutor"];
     const genero = ["Macho", "Fêmea"];
     const porte = ["Grande", "Médio", "Pequeno"];
 
     function onFileChange(e)
     {
-        console.log(e.target.files)   /* traz uma lista do input files e não um array, por isso é preciso fazer a transformação */
+        console.log(e.target.files);
         setPreview(Array.from(e.target.files));
         setPet({...pet,imagens:[...e.target.files]});
     }
-
     function handleChange(e)
     {
-        setPet({...pet, [e.target.name]:e.target.value})    // campo entre [] pois é mudado
+        setPet({...pet, [e.target.name]:e.target.value});
     }
-
-    function handleSituacao(e)
-    {
-        setPet({...pet, situacao:e.target.options[e.target.selectedIndex].text})        // tá pegando a option selecionada no select
+    function handleSituacao(e){
+        setPet({...pet, situacao:e.target.options[e.target.selectedIndex].text})
     }
-
-    function handlePorte(e)
-    {
-        setPet({...pet, porte:e.target.options[e.target.selectedIndex].text})     
+    function handlePorte(e){
+        setPet({...pet, porte:e.target.options[e.target.selectedIndex].text})
     }
-
-    function handleGenero(e)
-    {
-        setPet({...pet, genero:e.target.options[e.target.selectedIndex].text})      
+    function handleGenero(e){
+        setPet({...pet, genero:e.target.options[e.target.selectedIndex].text})
     }
-
-    function submit(e)
-    {
-        e.preventDefault();  // não recarrega a página
-        console.log(pet);   // ver o pet
+    function submit(e){
+        e.preventDefault();
+        console.log(pet);
         handleSubmit(pet);
     }
     return(
         <form onSubmit={submit}>
-            <div>       
+            <div>
             {
-                preview &&
                 preview.length > 0
-                ?preview.map((image, index)=>(
-                    <img src={URL.createObjectURL(image)} alt={pet.nome} key={`${pet.nome}+${index}`} />
+                ?preview.map((image,index)=>(
+                    <img src={URL.createObjectURL(image)}
+                    alt={pet.nome}
+                    key={`${pet.nome}+${index}`}
+                    />
                 ))
-                :pet && pet.imagens &&
-                pet.imagens.map((image, index)=>(   // process.env.REACT_APP_API ajuda a buscar a imagem
-                    <img src={`${process.env.REACT_APP_API}/images/pets/${image}`} alt={image} key={`${pet.nome}+${index}`} />    
-                ))
+                :pet.imagens &&
+                 pet.imagens.map((image, index)=>(
+                    <img src={`${process.env.REACT_APP_API}/images/pets/${image}`}
+                    alt={image}
+                    key={`${pet.nome}+${index}`}
+                    />
+                 ))
             }
             </div>
-            {
-                pet&&
-                <div>
-                <Input 
-                text = "Imagens do Pet"
+            <Input
+                text =  "Imagens do Pet"
                 type = "file"
                 name = "imagens"
                 handleOnChange = {onFileChange}
-                multiple = {true}
+                multiple={true}
             />
-
-            <Input 
-                text = "Nome"
+            <Input
+                text =  "Nome"
                 type = "text"
                 name = "nome"
-                handleOnChange = {handleChange}     // os tipos textos utilizam handleChange
-                value = { pet.nome || ""}
+                handleOnChange = {handleChange}
+                value = {pet.nome || ""}
             />
-
-            <Input 
-                text = "Idade"
+             <Input
+                text =  "Idade"
                 type = "text"
                 name = "idade"
-                handleOnChange = {handleChange}     
+                handleOnChange = {handleChange}
                 value = {pet.idade || ""}
             />
-
-            <Input 
-                text = "Raca"
+             <Input
+                text =  "Raça"
                 type = "text"
                 name = "raca"
-                handleOnChange = {handleChange}     
+                handleOnChange = {handleChange}
                 value = {pet.raca || ""}
             />
-
-            <Input 
-                text = "Cor Predominante"
+             <Input
+                text =  "Cor Predominante"
                 type = "text"
                 name = "corPredominante"
-                handleOnChange = {handleChange}     
+                handleOnChange = {handleChange}
                 value = {pet.corPredominante || ""}
             />
-
-            <Input 
-                text = "Cor dos Olhos"
+             <Input
+                text =  "Cor dos Olhos"
                 type = "text"
                 name = "corOlhos"
-                handleOnChange = {handleChange}     
+                handleOnChange = {handleChange}
                 value = {pet.corOlhos || ""}
             />
-
-            <Input 
-                text = "Espécie"
+             <Input
+                text =  "Espécie"
                 type = "text"
                 name = "especie"
-                handleOnChange = {handleChange}     
+                handleOnChange = {handleChange}
                 value = {pet.especie || ""}
             />
-
-            <Select 
+            <Select
+                name="genero"
                 text = "Gênero"
-                name = "genero"
                 options = {genero}
-                handleOnChange = {handleGenero}     // HANDLE criado pro genero
-                value = {pet.genero || ""}
+                handleOnChange = {handleGenero}
+                value={pet.genero || ""}
             />
-
-            <Select 
+            <br></br>
+            <Select
+                name="porte"
                 text = "Porte"
-                name = "porte"
                 options = {porte}
                 handleOnChange = {handlePorte}
-                value = {pet.porte || ""}
+                value={pet.porte || ""}
             />
-
-            <Input 
-                text = "Local"
+            <Input
+                text =  "Local"
                 type = "text"
                 name = "local"
-                handleOnChange = {handleChange}     
+                handleOnChange = {handleChange}
                 value = {pet.local || ""}
             />
-
-            <Input 
-                text = "Ponto de Referência"
+            <Input
+                text =  "Ponto de Referência"
                 type = "text"
                 name = "pontoReferencia"
-                handleOnChange = {handleChange}     
+                handleOnChange = {handleChange}
                 value = {pet.pontoReferencia || ""}
             />
-
-            <Input 
-                text = "Data"
+            <Input
+                text =  "Data"
                 type = "date"
                 name = "data"
-                handleOnChange = {handleChange}     
+                handleOnChange = {handleChange}
                 value = {pet.data || ""}
             />
-
-            <Input 
-                text = "Recompensa"
+            <Input
+                text =  "Recompensa"
                 type = "text"
                 name = "recompensa"
-                handleOnChange = {handleChange}     
+                handleOnChange = {handleChange}
                 value = {pet.recompensa || ""}
             />
-
-            <Select 
+            <Select
+                name="situacao"
                 text = "Situação"
-                name = "situacao"
                 options = {situacao}
                 handleOnChange = {handleSituacao}
-                value = {pet.situacao || ""}
+                value={pet.situacao|| ""}
             />
-
-            <Input 
-                text = "Comentário"
-                type = "text"
-                name = "comentario"
-                handleOnChange = {handleChange}     
-                value = {pet.comentario || ""}
-            />
-            </div>
-            
-            }
-            
-
+            <br></br>
             <input type="submit" value={btnText}/>
         </form>
     )
 }
-
 export default PetForm;

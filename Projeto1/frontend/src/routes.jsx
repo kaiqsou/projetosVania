@@ -7,7 +7,7 @@ import Footer from "./Component/Footer/index.jsx";
 import Container from "./Component/Container/index.jsx";
 import { UserProvider } from "./context/UserContext.jsx";
 import Message from "./Component/Message/index.jsx";
-import AddPet from "./pages/Pet/AddPet.jsx";
+import AddPet from "./pages/Pet/AddPet.jsx"
 function AppRoutes(){
     return(
         <BrowserRouter>
