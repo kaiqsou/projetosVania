@@ -5,8 +5,9 @@ import {Link} from "react-router-dom";
 
 function Home(){
     const[pets, setPets] = useState([]);
-    useEffect(()=>{
-        api.get("/pets/getAll").then((response)=>{
+    useEffect(()=>{        
+        api.get("/pets/getAll", 
+        ).then((response)=>{
             setPets(response.data.pets);
             console.log(response.data.pets);
         })

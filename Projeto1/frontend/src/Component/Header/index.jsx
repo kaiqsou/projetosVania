@@ -18,6 +18,9 @@ function Header(){
                     <li>
                         <Link to="/create">Achados e Perdidos</Link>
                     </li>
+                    <li>
+                        <Link to="/getAllPetsUser">Meus Pets</Link>
+                    </li>
                     <li onClick={logout}>Sair</li>
                 </>
             ):(

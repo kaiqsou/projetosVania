@@ -55,8 +55,16 @@ export default class PetController{
             res.status(500).json({message:error.message});
         }
     }
+
     static async getAll(req, res) {
         const pets = await Pet.find({ situacao: { $ne: "Finalizado" } }).sort("-createdAt");
         res.status(200).json({ pets });
+    }
+
+    static async getAllPetsUser(req, res) {
+        const token = getToken(req);
+        const user = await getUserByToken(token, res);
+        const pets = await Pet.find({ user: {$nd: user._id} }).sort("-createdAt"); 
+        res.status(200).json({pets, user});
     }
 }
