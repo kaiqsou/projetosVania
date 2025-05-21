@@ -26,7 +26,7 @@ function AppRoutes(){
                     <Route path="/create" element={<AddPet/>}/>
                     <Route path="/listPet" element={<ListPet/>}/>
                     <Route path="/excluir/:id" element={<RemovePet/>}/>
-                   
+                    <Route path="/detalhes/:id" element={<PetDetails/>}/>
                     
                 </Routes>
             </Container>
