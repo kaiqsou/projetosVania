@@ -5,5 +5,7 @@ import imageUpload from "../../helpers/image-upload.js";
 const routesPet = Router();
 routesPet.post('/Create',verifyToken, imageUpload.array("imagens"), PetController.create);
 routesPet.get('/getAll', PetController.getAll);
-routesPet.get('/getAllPetsUser', PetController.getAllPetsUser);
+routesPet.get('/getAllUser',verifyToken,PetController.getAllUser);
+routesPet.delete('/:id',verifyToken,PetController.removePetById);
+
 export default routesPet;
