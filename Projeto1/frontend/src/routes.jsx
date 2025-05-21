@@ -10,6 +10,7 @@ import Message from "./Component/Message/index.jsx";
 import AddPet from "./pages/Pet/AddPet.jsx";
 import ListPet from "./pages/Pet/ListPet/index.jsx";
 import RemovePet from "./pages/Pet/RemovePet.jsx";
+import PetDetails from "./pages/Pet/PetDetails.jsx";
 
 function AppRoutes(){
     return(
