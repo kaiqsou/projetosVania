@@ -10,8 +10,7 @@ import Message from "./Component/Message/index.jsx";
 import AddPet from "./pages/Pet/AddPet.jsx";
 import ListPet from "./pages/Pet/ListPet/index.jsx";
 import RemovePet from "./pages/Pet/RemovePet.jsx";
-import PetDetails from "./pages/Pet/PetDetails.jsx";
-
+import DetailPet from "./pages/Pet/DetailPet/index.jsx";
 function AppRoutes(){
     return(
         <BrowserRouter>
@@ -27,8 +26,7 @@ function AppRoutes(){
                     <Route path="/create" element={<AddPet/>}/>
                     <Route path="/listPet" element={<ListPet/>}/>
                     <Route path="/excluir/:id" element={<RemovePet/>}/>
-                    <Route path="/detalhes/:id" element={<PetDetails/>}/>
-                    
+                    <Route path="/detalhe" element={<DetailPet/>}/>
                 </Routes>
             </Container>
             <Footer/>

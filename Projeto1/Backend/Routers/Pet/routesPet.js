@@ -7,5 +7,4 @@ routesPet.post('/Create',verifyToken, imageUpload.array("imagens"), PetControlle
 routesPet.get('/getAll', PetController.getAll);
 routesPet.get('/getAllUser',verifyToken,PetController.getAllUser);
 routesPet.delete('/:id',verifyToken,PetController.removePetById);
-
 export default routesPet;

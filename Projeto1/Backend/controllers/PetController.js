@@ -2,7 +2,6 @@ import Pet from "../models/Pet.js";
 import getToken from "../helpers/get-token.js";
 import getUserByToken from "../helpers/get-user-by-token.js";
 import {Types} from "mongoose";
-
 export default class PetController{
     static async create(req, res){
         const{nome, idade, raca,corPredominante, corOlhos, especie, genero, porte, local,pontoReferencia, data, recompensa,situacao,comentario} = req.body;
@@ -57,51 +56,37 @@ export default class PetController{
             res.status(500).json({message:error.message});
         }
     }
-
-    static async getAll(req, res) 
-    {
+    static async getAll(req, res) {
         const pets = await Pet.find({ situacao: { $ne: "Finalizado" } }).sort("-createdAt");
         res.status(200).json({ pets });
     }
-
-    static async getAllUser(req,res)
-    {
+    static async getAllUser(req,res){
         const token =  getToken(req);
         const user = await getUserByToken(token);
         const pets = await Pet.find({ 'user._id': user._id })
         res.status(200).json({ pets });
     }
-
-    static async removePetById(req, res)
-    {
+    static async removePetById(req, res){
         const id = req.params.id;
         const ObjectId = Types.ObjectId;
 
-        // verifica o ID
-        if (!ObjectId.isValid(id))
+        if(!ObjectId.isValid(id))
         {
-            return res.status(422).json({message:"Id inválido!"});
+            return res.status(422).json({message:"Id inválido"});
         }
-
-        // verifica o PET
         const pet = await Pet.findOne({_id:id});
-
-        if (!pet)
+        if(!pet)
         {
-            return res.status(404).json({message:"Pet não encontrado"});
+             return res.status(404).json({message:"Pet não encontrado"});
         }
-
         const token = getToken(req);
         const user = await getUserByToken(token);
-
-        // verifica se o pet é mesmo do usuário
-        if (pet.user._id.toString() != user._id.toString())
+        if(pet.user._id.toString() != user._id.toString())
         {
-            return res.status(404).json({message:"Problema com a sua solicitação. Tente novamente!"});
+            return res.status(404).json({message:"Problema com a sua solicitação. Tente novamente."});
         }
-
         await Pet.findByIdAndDelete(id);
-        res.status(200).json({message:"Pet excluído com sucesso!"});
+        res.status(200).json({message:"Pet excluido com sucesso"});
     }
 
 }

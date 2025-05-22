@@ -1,11 +1,9 @@
 import styles from "./Home.module.css";
 import api from "../../utils/api";
 import { useEffect, useState } from "react";
-import {Link, useLocation} from "react-router-dom";
+import {Link} from "react-router-dom";
 function Home(){
     const[pets, setPets] = useState([]);
-    const location = useLocation();
-    const {pet} = location.state || {}
     useEffect(()=>{
         api.get("/pets/getAll").then ((response)=>{
             setPets(response.data.pets);
@@ -33,7 +31,7 @@ style={{backgroundImage:`url(${process.env.REACT_APP_API}/images/pets/${pet.imag
                             </div>
                             <div className={styles.pet_card_body}>
                                 <h3>{pet.nome || "Sem nome"}</h3>
-                                <Link to={"/detalhe"} state={{pet}} className={styles.details_button}>Ver Detalhes</Link>
+                                <Link to={"/detalhe"} state={{ pet }} className={styles.details_button}>Ver Detalhes</Link>
                             </div>
                         </div>
                     ))
