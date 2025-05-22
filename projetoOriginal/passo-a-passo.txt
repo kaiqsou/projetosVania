@@ -11,6 +11,8 @@ PASSO-A-PASSO DO PROJETO
 	- mongoose
 	- argon2
 	- multer
+	- nodemail
+	- dotenv
 
 adicionar "type": "module", abaixo do "main" no package.json
 	$ npm install nodemon --save-dev

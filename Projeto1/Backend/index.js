@@ -2,6 +2,8 @@ import express from "express";
 import cors from "cors";
 import routes from "./Routers/User/routes.js";
 import routesPet from "./Routers/Pet/routesPet.js";
+import routesEmail from "./Routers/Email/routesEmail.js";
+
 const app = new express();
 //mensagem json
 app.use(express.json());
@@ -12,5 +14,6 @@ app.use(cors({
 app.use(express.static('public'));
 app.use("/users", routes);
 app.use("/pets", routesPet);
+app.use("/emails", routesEmail);
 
 app.listen(5000);

@@ -11,6 +11,8 @@ import AddPet from "./pages/Pet/AddPet.jsx";
 import ListPet from "./pages/Pet/ListPet/index.jsx";
 import RemovePet from "./pages/Pet/RemovePet.jsx";
 import DetailPet from "./pages/Pet/DetailPet/index.jsx";
+import MessagePage from "./pages/Pet/MessagePage/index.jsx";
+
 function AppRoutes(){
     return(
         <BrowserRouter>
@@ -27,6 +29,7 @@ function AppRoutes(){
                     <Route path="/listPet" element={<ListPet/>}/>
                     <Route path="/excluir/:id" element={<RemovePet/>}/>
                     <Route path="/detalhe" element={<DetailPet/>}/>
+                    <Route path="/mensagem" element={<MessagePage/>}/>
                 </Routes>
             </Container>
             <Footer/>
